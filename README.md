@@ -24,7 +24,7 @@ CRMEB开源商城系统PHP版
     </a>
 </div>
 
-#### 
+####
 
 <div align="center">
 
@@ -130,7 +130,7 @@ SVIP会员：付费会员 试用会员 实体会员卡 会员权益
 微信端登录：微信授权登录 手机号快速登录 账号密码登录
 支持单点登录：快速接入第三方系统
 ~~~
-微信小程序直播	
+微信小程序直播
 ~~~
 直播间管理 主播管理 直播商品管理
 ~~~
@@ -192,7 +192,7 @@ CMS管理
 
 ```
 Nignx（推荐）/Apache/IIS
-PHP 7.1 ~ 7.4 
+PHP 7.1 ~ 7.4
 MySQL 5.7 ～ 8.0
 Redis （可选）
 ```
@@ -248,9 +248,9 @@ CRMEB® 商标和著作权所有者为西安众邦网络科技有限公司。
 
 ---
 
-###  📕 CRMEB多商户
+###  📕 双十一狂欢购
 
-[![输入图片说明](readme/pic/多商户.jpg)](https://www.crmeb.com/index/merchant)
+[![输入图片说明](readme/pic/双十一活动.jpg)](https://www.crmeb.com/ask/thread/50719)
 
 ---
 
