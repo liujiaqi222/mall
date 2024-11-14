@@ -250,7 +250,7 @@ CRMEB® 商标和著作权所有者为西安众邦网络科技有限公司。
 
 ###  📕 多商户PHP
 
-[![输入图片说明](readme/pic/多商户PHP.jpg)](https://www.crmeb.com/ask/thread/50719)
+[![输入图片说明](readme/pic/多商户PHP.jpg)](https://www.crmeb.com/index/merchant)
 
 ---
 
