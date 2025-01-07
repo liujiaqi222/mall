@@ -86,7 +86,7 @@ CRMEB开源商城Java版：https://gitee.com/ZhongBangKeJi/crmeb_java
 
 ###  📱 系统演示
 
-![输入图片说明](readme/pic/公众号.jpg)
+![输入图片说明](readme/pic/contact.jpg)
 
 管理后台： http://v5.crmeb.net/admin
 
