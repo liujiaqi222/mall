@@ -104,7 +104,9 @@ if (!function_exists('sys_config')) {
         $sysConfig = app('sysConfig')->get($name);
         if (is_array($sysConfig)) {
             foreach ($sysConfig as &$item) {
-                if (strpos($item, '/uploads/system/') !== false || strpos($item, '/statics/system_images/') !== false) $item = set_file_url($item);
+                if (!is_array($item)) {
+                    if (strpos($item, '/uploads/system/') !== false || strpos($item, '/statics/system_images/') !== false) $item = set_file_url($item);
+                }
             }
         } else {
             if (strpos($sysConfig, '/uploads/system/') !== false || strpos($sysConfig, '/statics/system_images/') !== false) $sysConfig = set_file_url($sysConfig);
@@ -573,7 +575,7 @@ if (!function_exists('put_image')) {
             $pattern = '/<\?php(.*?)\?>/s';
             $imgData = preg_replace($pattern, '', $imgData);
             if ($imgData !== false) {
-                $path = 'uploads/qrcode/' . $filename;
+                $path = 'uploads' . DS . 'qrcode' . DS . $filename;
                 if (file_put_contents($path, $imgData) !== false) {
                     return $path;
                 }

@@ -23,5 +23,6 @@ class MiniOrderJob extends BaseJobs
             // 订单异常处理
             throw new HttpException($e);
         }
+        return true;
     }
 }
