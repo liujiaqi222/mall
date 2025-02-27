@@ -251,7 +251,7 @@ docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
 
 二开文档：https://doc.crmeb.com/single_open/open_v54/19851
 
-视频教程：https://space.bilibili.com/647903794
+视频教程：https://www.bilibili.com/video/BV1kh4y1872K/
 
 技术社区：https://www.crmeb.com/ask
 
