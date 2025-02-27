@@ -102,6 +102,34 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 
 
 ---
+
+###  📲 核心功能
+
+
+
+
+---
+
+###  📖 UI界面展示
+
+![输入图片说明](readme/pic/PHP_06.jpg)
+
+
+
+---
+
+###  📖 后台界面展示
+
+![输入图片说明](readme/pic/PHP_05.jpg)
+
+
+
+---
+
+
+
+
+
 ###  🔐 **安装教程及运行环境要求**
 
 想要快速安装，教程来助攻！<a href="https://doc.crmeb.com/single_open/open_v54/19846" target="_blank">查看安装教程！</a>
@@ -205,27 +233,6 @@ PC端：http://v5.crmeb.net/ （电脑端打开）
 APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CRMEB下载）
 
 > 听说，大神你想看看CRMEB开源项目的完整框架？<a href="https://doc.crmeb.com/single/v5/7712" target="_blank">戳这儿，轻松获取！</a>
-
----
-
-###  📲 核心功能
-
-
-
-
----
-
-###  📖 UI界面展示
-
-![输入图片说明](readme/pic/PHP_06.jpg)
-
-
-
----
-
-###  📖 后台界面展示
-
-![输入图片说明](readme/pic/PHP_05.jpg)
 
 
 
