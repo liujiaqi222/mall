@@ -25,7 +25,7 @@ CRMEB开源商城系统（PHP版）
 </div>
 
 <div align="center" style="font-size: 15px;">
-  用心做开源，我们也很需要你的鼓励！右上角Star🌟，等你点亮！
+  用心做开源，我们也很需要你的鼓励！右上角Star🌟，等你点亮
 </div>
 
 
@@ -37,9 +37,9 @@ CRMEB开源商城系统（PHP版）
 
 [官网](https://www.crmeb.com/) |
 [在线体验](http://v4.crmeb.net/admin/) |
-[帮助文档](https://doc.crmeb.com/single/v54/) |
+[帮助文档](https://doc.crmeb.com/single_open) |
 [应用市场](https://www.crmeb.com/market/) |
-[技术社区](https://www.crmeb.com/ask/) |
+[技术社区](https://www.crmeb.com/ask/thread/list/147) |
 [宽屏预览](https://gitee.com/ZhongBangKeJi/CRMEB/blob/master/README.md)
 
 
@@ -260,7 +260,7 @@ docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
 
 视频教程：https://www.bilibili.com/video/BV1kh4y1872K/
 
-技术社区：https://www.crmeb.com/ask
+技术社区：https://www.crmeb.com/ask/thread/list/147
 
 ---
 
