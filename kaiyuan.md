@@ -68,8 +68,8 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 **社区共建计划**  
 我们致力于打造开发者友好生态，开放源码、持续更新功能模块，并欢迎开发者提交优化建议或贡献代码。通过共享技术成果，降低行业重复造轮子成本，推动开源电商系统的可持续发展。
 
-🌟 **立即体验**：访问官网下载，参与社区讨论，共同完善CRMEB开源商城！  
-🔗 功能列表 | 📩 <a href="https://gitee.com/ZhongBangKeJi/CRMEB/issues" target="_blank">提交反馈</a> | 📩 <a href="https://gitee.com/ZhongBangKeJi/CRMEB/pulls" target="_blank">提交代码</a>
+
+🔗 <a href="https://doc.crmeb.com/single_open/open_v54/19855" target="_blank">功能列表</a> | 📩 <a href="https://gitee.com/ZhongBangKeJi/CRMEB/issues" target="_blank">提交反馈</a> | 📩 <a href="https://gitee.com/ZhongBangKeJi/CRMEB/pulls" target="_blank">提交代码</a>
 
 
 
@@ -102,10 +102,12 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 
 
 ---
+###  🔐 **安装教程及运行环境要求**
 
-### **CRMEB 开源版运行环境要求**
+想要快速安装，教程来助攻！<a href="https://doc.crmeb.com/single_open/open_v54/19846" target="_blank">查看安装教程！</a>
 
-| **类别**         | **要求**                                                                 |
+
+| **运行环境**         | **要求**                                                                 |
 |------------------|------------------------------------------------------------------------|
 | **操作系统**     | Linux / Windows                                                        |
 | **WEB 服务**   | Nginx / Apache / IIS                                                      |
@@ -124,6 +126,7 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 > 温馨提示：虚拟空间不支持，推荐使用bt宝塔面板，服务器推荐京东云服务器：<a href="https://partner.jdcloud.com/partner/notice/b06c3232b6394fdfa496923b8e00b286" target="_blank">注册即享6.5折专属优惠，点我领取！</a>
 
 ---
+###  📺 **开发环境及使用技术**
 
 ### **开发环境：**
 | 工具          | 版本               | 下载链接                                                                 |
@@ -137,24 +140,22 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 
 ---
 
+
 ### 后端技术栈
-| **技术**            | **功能/用途**                                                                 | **地址**                                                                 |
+| **技术**            | **名称**                                                                 | **网址**                                                                 |
 |---------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| `php扩展库`          | PHP 基础运行环境，JSON 数据处理，高精度数学计算等                                | https://www.php.net/                                                   |
-| `topthink`          | ThinkPHP 视图模板引擎，验证码生成组件，队列任务支持，数据库迁移工具                 | https://www.thinkphp.cn/                     |
-| `overtrue`          | 微信生态开发（公众号/小程序/支付）                                               | https://github.com/w7corp/easywechat                                     |
-| `php-jwt`           | JWT 令牌生成与验证                                                             | https://github.com/firebase/php-jwt                                    |
-| `var-dumper`        | 调试输出工具（格式化变量）                                                     | https://symfony.com/doc/current/components/var_dumper.html            |
-| `phpoffice`         | 文件处理                                                                    | https://github.com/PHPOffice/PhpSpreadsheet                           |
-| `guzzlehttp｜psr7`  | HTTP 客户端库，PSR-7 HTTP 消息接口实现                                        | https://guzzle-cn.readthedocs.io/zh-cn/latest                        |
-| `form-builder`      | 快速构建表单的 UI 工具                                                      | https://form-create.com                                  |
-| `workerman`         | 高性能 Socket 服务器框架，定时任务调度                                        | https://www.workerman.net                                   |
-
----
-
+| php扩展库          | PHP 基础运行环境，JSON 数据处理，高精度数学计算等                                | https://www.php.net/                                                   |
+| topthink          | ThinkPHP 视图模板引擎，验证码生成组件，队列任务支持，数据库迁移工具                 | https://www.thinkphp.cn/                     |
+| overtrue          | 微信生态开发（公众号/小程序/支付）                                               | https://github.com/w7corp/easywechat                                     |
+| php-jwt           | JWT 令牌生成与验证                                                             | https://github.com/firebase/php-jwt                                    |
+| var-dumper        | 调试输出工具（格式化变量）                                                     | https://symfony.com/doc/current/components/var_dumper.html            |
+| phpoffice         | 文件处理                                                                    | https://github.com/PHPOffice/PhpSpreadsheet                           |
+| guzzlehttp｜psr7  | HTTP 客户端库，PSR-7 HTTP 消息接口实现                                        | https://guzzle-cn.readthedocs.io/zh-cn/latest                        |
+| form-builder      | 快速构建表单的 UI 工具                                                      | https://form-create.com                                  |
+| workerman         | 高性能 Socket 服务器框架，定时任务调度                                        | https://www.workerman.net                                   |
 
 ### 移动端技术栈
-| 技术 | 名称 | 官网 |
+| **技术** | **名称** | **官网** |
 | --- | --- | --- |
 | uniapp | 跨端框架 | https://uniapp.dcloud.net.cn/ |
 | vuex | 状态管理库 | https://vuex.vuejs.org/ |
@@ -164,7 +165,7 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 | easy-loadimage | 图片懒加载 | https://github.com/TSjianjiao/easy-loadimage |
 
 ### Admin端技术栈
-| 技术 | 名称 | 官网 |
+| **技术** | **名称** | **官网** |
 | --- | --- | --- |
 | vue2 | Vue框架 | https://v2.vuejs.org/ |
 | vuex | 状态管理库 | https://vuex.vuejs.org/ |
@@ -179,7 +180,7 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 | v-viewer | 图片查看器 | https://github.com/mirari/v-viewer |
 
 ### PC端技术栈
-| 技术 | 名称 | 官网 |
+| **技术** | **名称** | **官网** |
 | --- | --- | --- |
 | nuxt | Vue服务端渲染框架 | https://nuxtjs.org/ |
 | element | UI框架 | https://element.eleme.io/ |
@@ -188,14 +189,6 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 | cookie-universal-nuxt | Nuxt Cookie处理 | https://github.com/microcipcip/cookie-universal |
 | postcss | CSS转换工具 | https://postcss.org/ |
 | qs | 查询字符串解析 | https://github.com/ljharb/qs |
-
-
-
-
-
-###  🔐 安装教程
-
-想要快速安装，教程来助攻！<a href="https://doc.crmeb.com/single_open/open_v54/19846" target="_blank">查看安装教程！</a>
 
 ---
 
@@ -221,71 +214,6 @@ APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CR
 ###  📲 核心功能
 
 
-系统功能
-~~~
-移动端支持DIY：22种组件；
-多种风格和布局切换：8种风格4种布局；
-多种语言配置：支持200多个国家语言；
-多应用端展示：公众号端、H5端、小程序端、APP端、PC端（需要购买）；
-多种消息通知：公众号模版、小程序模版、短信、打印机、企业微信；
-低代码：生成功能模块、增加系统配置、组合数据；
-对外接口：包含用户、商品、订单等接口，方便其它系统对接；
-多种云储存：阿里云、腾讯云、华为云、京东云、七牛云、天翼云；
-~~~
-商城功能
-~~~
-多种支付方式：微信支付、支付宝支持、通联支付；
-多种商品类型：标准商品、虚拟商品、卡密商品、优惠券商品；
-多种营销功能：拼团、砍价、秒杀、抽奖、优惠券、积分、经验、分销、充值、签到、渠道码；
-多种运费方式：快递、配送、自提、包邮、超强运费模版管理、多自提点；
-~~~
-用户管理
-~~~
-用户等级：用户等级 经验升级 经验任务；
-SVIP会员：付费会员 试用会员 实体会员卡 会员权益
-用户管理：用户类型 添加用户 用户标签/分组 用户操作 浏览记录
-登录方式：H5登录 微信快速登录 密码登录/注册
-微信端登录：微信授权登录 手机号快速登录 账号密码登录
-支持单点登录：快速接入第三方系统
-~~~
-微信小程序直播
-~~~
-直播间管理 主播管理 直播商品管理
-~~~
-CMS管理
-~~~
-文章内容	文章管理	文章分类 文章列表
-~~~
-客服系统
-~~~
-客服管理:客服添加 客服权限 关键字回复
-客服工作台:客服状态 发送信息 订单处理 商品记录 转接客服 客服常用语 客户信息管理 支持H5端和PC端
-客户端：支持平台用户H5端、PC端，支持广告配置
-~~~
-第三方设置
-~~~
-短信
-商品采集
-小票打印
-电子面单打印
-物流查询
-电子发票
-云存储
-~~~
-开发工具
-~~~
-数据库管理
-文件在线管理
-接口文档管理
-代码功能模块生成
-数据字典管理
-对外接口管理
-低代码事件
-低代码定时任务
-多语言一键配置
-数据维护
-安全维护
-~~~
 
 
 ---
@@ -322,7 +250,7 @@ CMS管理
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 
-版权所有Copyright © 2017-2024 by CRMEB (https://www.crmeb.com)
+版权所有Copyright © 2017-2025 by CRMEB (https://www.crmeb.com)
 
 All rights reserved。
 
