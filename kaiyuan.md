@@ -132,8 +132,11 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 
 ###  🔐 **安装教程及运行环境要求**
 
-想要快速安装，教程来助攻！<a href="https://doc.crmeb.com/single_open/open_v54/19846" target="_blank">查看安装教程！</a>
-
+想要快速安装，教程来助攻！
+快速一键安装部署：https://doc.crmeb.com/single_open/open_v54/20366
+手动配置安装：https://doc.crmeb.com/single_open/open_v54/20389
+docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
+宝塔环境一键安装：https://doc.crmeb.com/single_open/open_v54/19892
 
 | **运行环境**         | **要求**                                                                 |
 |------------------|------------------------------------------------------------------------|
