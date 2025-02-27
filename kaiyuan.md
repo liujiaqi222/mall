@@ -145,19 +145,7 @@ APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CR
 
 
 
-###  🔐 **安装教程及运行环境要求**
-
-
-
-#### 想要快速安装，教程来助攻！
-
-快速一键安装部署：https://doc.crmeb.com/single_open/open_v54/20366
-
-手动配置安装：https://doc.crmeb.com/single_open/open_v54/20389
-
-docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
-
-宝塔环境一键安装：https://doc.crmeb.com/single_open/open_v54/19892
+###  🔐 **运行环境**
 
 
 | **运行环境**         | **要求**                                                                 |
@@ -240,6 +228,32 @@ docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
 | postcss | CSS转换工具 | https://postcss.org/ |
 | qs | 查询字符串解析 | https://github.com/ljharb/qs |
 
+
+
+### 想要快速安装，教程来助攻！
+
+快速一键安装部署：https://doc.crmeb.com/single_open/open_v54/20366
+
+手动配置安装：https://doc.crmeb.com/single_open/open_v54/20389
+
+docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
+
+宝塔环境一键安装：https://doc.crmeb.com/single_open/open_v54/19892
+
+### 二开支持：
+使用文档：https://doc.crmeb.com/single_open/open_v54/19849
+
+接口文档：https://doc.crmeb.com/single_open/open_v54/21040
+
+数据字典：https://doc.crmeb.com/single_open/open_v54/20136
+
+代码生成：https://doc.crmeb.com/single_open/open_v54/20135
+
+二开文档：https://doc.crmeb.com/single_open/open_v54/19851
+
+视频教程：https://space.bilibili.com/647903794
+
+技术社区：https://www.crmeb.com/ask
 
 ---
 
