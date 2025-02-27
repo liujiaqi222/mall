@@ -312,29 +312,10 @@ CMS管理
 ![输入图片说明](readme/pic/开源群.jpg)
 #### 技术社区！找方法、提bug、看官方消息、拿活跃大奖！都在 <a href="https://www.crmeb.com/ask" target="_blank">CRMEB 技术社区</a> 应有尽有
 
----
-
-欢迎<a href="https://gitee.com/ZhongBangKeJi/CRMEB/issues" target="_blank">反馈问题</a>
-
-欢迎<a href="https://gitee.com/ZhongBangKeJi/CRMEB/pulls" target="_blank">提交代码</a>
 
 
----
-###  📺 版权须知
 
-Apache License 2.0 许可的主要内容包括：
 
-1. 授权：允许任何人以任何目的使用、复制、修改和分发该软件。
-
-2. 版权声明：要求在软件和相关文档中包含原始版权声明和许可证声明。
-
-3. 保证免责：表明该软件是按现状提供的，没有任何明示或暗示的担保或保证。作者不承担任何赔偿责任。
-
-4. 贡献者授权：要求所有贡献者授予 Apache 软件基金会永久性的、免费的、不可撤销的许可，以使用、复制、修改和分发其贡献。
-
-5. 专利许可：为了保护使用该软件的用户，该许可要求贡献者授权任何必要的专利许可，以便将其用于 Apache 软件基金会的项目。
-
-Apache License 2.0 是一种宽松的开源许可，允许人们自由使用、修改和分发软件。
 
 ---
 ###  💾 版权信息
