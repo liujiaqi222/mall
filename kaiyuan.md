@@ -116,6 +116,28 @@ CRMEB开源商城系统代码100%开源，基于 **Apache-2.0协议** 免费商�
 ![输入图片说明](readme/pic/PHP_05.jpg)
 
 
+---
+
+
+###  📱 系统演示
+
+![输入图片说明](readme/pic/contact.jpg)
+
+管理后台： http://v5.crmeb.net/admin
+
+账号：demo 密码：crmeb.com
+
+H5端：http://v5.crmeb.net/ （移动端打开）
+
+PC端：http://v5.crmeb.net/ （电脑端打开）
+
+APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CRMEB下载）
+
+> 听说，大神你想看看CRMEB开源项目的完整框架？<a href="https://doc.crmeb.com/single/v5/7712" target="_blank">戳这儿，轻松获取！</a>
+
+
+
+
 
 ---
 
@@ -217,27 +239,6 @@ docker-compose一键部署：https://doc.crmeb.com/single_open/open_v54/20145
 | cookie-universal-nuxt | Nuxt Cookie处理 | https://github.com/microcipcip/cookie-universal |
 | postcss | CSS转换工具 | https://postcss.org/ |
 | qs | 查询字符串解析 | https://github.com/ljharb/qs |
-
----
-
-
-###  📱 系统演示
-
-![输入图片说明](readme/pic/contact.jpg)
-
-管理后台： http://v5.crmeb.net/admin
-
-账号：demo 密码：crmeb.com
-
-H5端：http://v5.crmeb.net/ （移动端打开）
-
-PC端：http://v5.crmeb.net/ （电脑端打开）
-
-APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CRMEB下载）
-
-> 听说，大神你想看看CRMEB开源项目的完整框架？<a href="https://doc.crmeb.com/single/v5/7712" target="_blank">戳这儿，轻松获取！</a>
-
-
 
 
 ---
