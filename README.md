@@ -32,7 +32,6 @@ CRMEB开源商城系统（PHP版）
 ####
 
 <div align="center">
-
 [comment]: <> ([宽屏预览]&#40;https://gitee.com/ZhongBangKeJi/CRMEB/blob/master/README.md&#41;)
 
 [官网](https://www.crmeb.com/) |
@@ -41,7 +40,7 @@ CRMEB开源商城系统（PHP版）
 [应用市场](https://www.crmeb.com/market/) |
 [技术社区](https://www.crmeb.com/ask/)
 
-[comment]: <> ([宽屏预览]&#40;https://gitee.com/ZhongBangKeJi/CRMEB/blob/master/README.md&#41;)
+
 
 </div>
 
