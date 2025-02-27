@@ -257,19 +257,6 @@ APP下载：http://app.crmeb.cn/bzv （苹果手机直接在APP Store里搜索CR
 
 
 
-
-
----
-###  💾 版权信息
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2017-2025 by CRMEB (https://www.crmeb.com)
-
-All rights reserved。
-
-CRMEB® 商标和著作权所有者为西安众邦网络科技有限公司。
-
 ---
 
 ###  📕 CRMEB PRO版
