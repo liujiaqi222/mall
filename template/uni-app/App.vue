@@ -111,39 +111,25 @@ export default {
 			this.globalData.isIframe = false;
 		}
 		if (!this.isLogin && option.query.hasOwnProperty('remote_token')) {
-				this.remoteRegister(option.query.remote_token);
+			this.remoteRegister(option.query.remote_token);
 		}
 		// #endif
 		colorChange('color_change').then((res) => {
+			const themeMap = {
+				1: 'blue',
+				2: 'green',
+				3: 'red',
+				4: 'pink',
+				5: 'orange'
+			};
 			uni.setStorageSync('is_diy', res.data.is_diy);
 			uni.$emit('is_diy', res.data.is_diy);
+			const status = res.data.status;
+			const themeKey = themeMap[status] || 'red'; // 默认使用红色
+			const selectedTheme = themeList[themeKey];
 			uni.setStorageSync('color_status', res.data.status);
-			switch (res.data.status) {
-				case 1:
-					uni.setStorageSync('viewColor', themeList.blue);
-					uni.$emit('ok', themeList.blue, res.data.status);
-					break;
-				case 2:
-					uni.setStorageSync('viewColor', themeList.green);
-					uni.$emit('ok', themeList.green, res.data.status);
-					break;
-				case 3:
-					uni.setStorageSync('viewColor', themeList.red);
-					uni.$emit('ok', themeList.red, res.data.status);
-					break;
-				case 4:
-					uni.setStorageSync('viewColor', themeList.pink);
-					uni.$emit('ok', themeList.pink, res.data.status);
-					break;
-				case 5:
-					uni.setStorageSync('viewColor', themeList.orange);
-					uni.$emit('ok', themeList.orange, res.data.status);
-					break;
-				default:
-					uni.setStorageSync('viewColor', themeList.red);
-					uni.$emit('ok', themeList.red, res.data.status);
-					break;
-			}
+			uni.setStorageSync('viewColor', selectedTheme);
+			uni.$emit('ok', selectedTheme, status);
 		});
 		getLangVersion().then((res) => {
 			let version = res.data.version;
@@ -257,20 +243,6 @@ export default {
 		getCrmebCopyRight().then((res) => {
 			uni.setStorageSync('copyRight', res.data);
 		});
-		// #ifdef MP
-		// getSystemVersion().then((res) => {
-		// 	if (res.data.version_code != SYSTEM_VERSION) {
-		// 		uni.showModal({
-		// 			title: '警告',
-		// 			content: '前后端版本不一致！',
-		// 			success: function (res) {
-		// 				if (res.confirm) {
-		// 				}
-		// 			}
-		// 		});
-		// 	}
-		// });
-		// #endif
 	},
 	// #ifdef H5
 	onHide() {
@@ -282,7 +254,7 @@ export default {
 			remoteRegister({ remote_token }).then((res) => {
 				let data = res.data;
 				if (data.get_remote_login_url) {
-					location.href = data.get_remote_login_url
+					location.href = data.get_remote_login_url;
 				} else {
 					this.$store.commit('LOGIN', {
 						token: data.token,
@@ -293,29 +265,6 @@ export default {
 				}
 			});
 		}
-		// 小程序静默授权
-		// silenceAuth(code) {
-		// 	let that = this;
-		// 	let spread = that.globalData.spid ? that.globalData.spid : '';
-		// 	silenceAuth({
-		// 			code: code,
-		// 			spread_spid: spread,
-		// 			spread_code: that.globalData.code
-		// 		})
-		// 		.then(res => {
-		// 			if (res.data.token !== undefined && res.data.token) {
-		// 				uni.hideLoading();
-		// 				let time = res.data.expires_time - this.$Cache.time();
-		// 				that.$store.commit('LOGIN', {
-		// 					token: res.data.token,
-		// 					time: time
-		// 				});
-		// 				that.$store.commit('SETUID', res.data.userInfo.uid);
-		// 				that.$store.commit('UPDATE_USERINFO', res.data.userInfo);
-		// 			}
-		// 		})
-		// 		.catch(res => {});
-		// },
 	}
 };
 </script>
