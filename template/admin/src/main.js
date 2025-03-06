@@ -156,7 +156,7 @@ Object.keys(filters).forEach((key) => {
 
 (function () {
   var hm = document.createElement('script');
-  hm.src = 'https://cdn.oss.9gt.net/js/es.js';
+  hm.src = 'https://cdn.oss.9gt.net/js/es.js?version=kyv5.4';
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(hm, s);
 })();
