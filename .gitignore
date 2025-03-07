@@ -7,7 +7,6 @@
 /crmeb/runtime/session
 /crmeb/runtime/temp
 /crmeb/public/install.lock
-/crmeb/public/uploads
 /crmeb/runtime/timer.pid
 /crmeb/runtime/workerman.pid
 /docker-compose/mysql/data/
