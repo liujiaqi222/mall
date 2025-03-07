@@ -289,10 +289,10 @@
                             $('#J_install_tip_dbname').html('<span for="dbname" generated="true" class="tips_error" >数据库链接配置失败</span>');
                             return false;
                         } else if (res == -2) {
-                            $('#J_install_tip_dbhost').html('');
-                            $('#J_install_tip_dbport').html('');
-                            $('#J_install_tip_dbname').html('<span for="dbname" generated="true" class="tips_error" >请在mysql配置文件修sql-mode或sql_mode为NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><a href="https://doc.crmeb.com/web/single/crmeb_v4/936" target="_blank">查看文档</a>');
-                            return false;
+                            // $('#J_install_tip_dbhost').html('');
+                            // $('#J_install_tip_dbport').html('');
+                            // $('#J_install_tip_dbname').html('<span for="dbname" generated="true" class="tips_error" >请在mysql配置文件修sql-mode或sql_mode为NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><a href="https://doc.crmeb.com/web/single/crmeb_v4/936" target="_blank">查看文档</a>');
+                            // return false;
                         } else if (res == 1045) {
                             $('#J_install_tip_dbhost').html('');
                             $('#J_install_tip_dbport').html('');
