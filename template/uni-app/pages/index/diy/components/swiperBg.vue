@@ -1,40 +1,39 @@
 <template>
-	<view class="swiperBg skeleton-rect" :style="'margin-top:' + marginTop*2 +'rpx;'" v-show="!isSortType">
-		<block v-if="imgUrls.length">
-			<view class="colorBg"
-				:style="'background: linear-gradient(90deg, '+ bgColor[0].item +' 50%, '+ bgColor[1].item +' 100%);'"
-				v-if="isColor"></view>
-			<view class="swiper" :class="[imgConfig?'':'fillet']" :style="'padding: 0 '+ paddinglr +'rpx;'">
-				<swiper :style="'height:'+ imageH +'rpx;'" :autoplay="true" :circular="circular" :interval="interval"
-					:duration="duration" indicator-color="rgba(255,255,255,0.6)" indicator-active-color="#fff"
-					@change='bannerfun'>
-					<block v-for="(item,index) in imgUrls" :key="index">
-						<swiper-item>
-							<view @click="goDetail(item)" class='slide-navigator acea-row row-between-wrapper'>
-								<image :src="item.img" mode="aspectFill" class="slide-image aa"
-									:style="'height:'+ imageH +'rpx;'">
-								</image>
-							</view>
-						</swiper-item>
-					</block>
-				</swiper>
-				<view v-if="docConfig==0" class="dot acea-row"
-					:style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
-					<view class="dot-item" :style="active==index?'background:'+ dotColor:''"
-						v-for="(item,index) in imgUrls"></view>
-				</view>
-				<view v-if="docConfig==1" class="dot acea-row"
-					:style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
-					<view class="dot-item line_dot-item" :style="active==index?'background:'+ dotColor:''"
-						v-for="(item,index) in imgUrls"></view>
-				</view>
-				<view v-if="docConfig==2" class="dot acea-row"
-					:style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
-					<view class="instruct">{{current}}/{{imgUrls.length}}</view>
-				</view>
-			</view>
-		</block>
-	</view>
+  <view class="swiperBg skeleton-rect" :style="'margin-top:' + marginTop*2 +'rpx;'" v-show="!isSortType">
+    <block v-if="imgUrls.length">
+      <view class="colorBg"
+        :style="'background: linear-gradient(90deg, '+ bgColor[0].item +' 50%, '+ bgColor[1].item +' 100%);'"
+        v-if="isColor"></view>
+      <view class="swiper" :class="[imgConfig?'':'fillet']" :style="'padding: 0 '+ paddinglr +'rpx;'">
+        <swiper :style="'height:'+ imageH +'rpx;'" :autoplay="true" :circular="circular" :interval="interval"
+          :duration="duration" indicator-color="rgba(255,255,255,0.6)" indicator-active-color="#fff"
+          @change='bannerfun'>
+          <block v-for="(item,index) in imgUrls" :key="index">
+            <swiper-item>
+              <view @click="goDetail(item)" class='slide-navigator acea-row row-between-wrapper'>
+                <image :src="item.img" mode="aspectFill" class="slide-image aa" :style="'height:'+ imageH +'rpx;'">
+                </image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view v-if="docConfig==0" class="dot acea-row"
+          :style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
+          <view class="dot-item" :style="active==index?'background:'+ dotColor:''" :key="index"
+            v-for="(item,index) in imgUrls"></view>
+        </view>
+        <view v-if="docConfig==1" class="dot acea-row"
+          :style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
+          <view class="dot-item line_dot-item" :style="active==index?'background:'+ dotColor:''"
+            v-for="(item,index) in imgUrls"></view>
+        </view>
+        <view v-if="docConfig==2" class="dot acea-row"
+          :style="{paddingLeft: paddinglr+20 + 'rpx',paddingRight: paddinglr+20 + 'rpx',justifyContent: (txtStyle==1?'center':txtStyle==2?'flex-end':'flex-start')}">
+          <view class="instruct">{{current}}/{{imgUrls.length}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
 </template>
 
 <script>

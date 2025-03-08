@@ -963,10 +963,7 @@
 				// #endif
 			],
 			"plugins": {
-				"live-player-plugin": {
-					"version": "1.3.5",
-					"provider": "wx2b03c6e691cd7370"
-				}
+				
 			}
 		},
 		{
@@ -1287,13 +1284,13 @@
 							// #endif
 						}
 					}
-				},
-				{
-					"path": "live_list/index",
-					"style": {
-						"navigationBarTitleText": "精彩内容"
-					}
 				}
+				// {
+				// 	"path": "live_list/index",
+				// 	"style": {
+				// 		"navigationBarTitleText": "精彩内容"
+				// 	}
+				// }
 			]
 		},
 		{

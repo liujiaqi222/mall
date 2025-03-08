@@ -45,7 +45,8 @@ function baseRequest(url, method, data, {
 	return new Promise((reslove, reject) => {
 		if (uni.getStorageSync('locale')) {
 			header['Cb-lang'] = uni.getStorageSync('locale')
-		}
+    }
+    console.log(Url + "/api/" + url,'test...');
 		uni.request({
 			url: Url + '/api/' + url,
 			method: method || 'GET',

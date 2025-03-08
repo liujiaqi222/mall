@@ -1,45 +1,34 @@
 <template>
-  <view
-    v-if="show"
-    :style="{
-      width: '100vw',
-      height: '100vh',
-      backgroundColor: bgcolor,
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      zIndex: 9998,
-    }"
-  >
-    <view
-      v-for="(item, rect_idx) in skeletonRectLists"
-      :key="rect_idx + 'rect'"
-      :class="[loading == 'chiaroscuro' ? 'chiaroscuro' : '']"
-      :style="{
-        width: item.width * 2 + 'rpx',
-        height: item.height * 2 + 'rpx',
-        backgroundColor: 'rgb(194, 207, 214,.3)',
-        position: 'absolute',
-        left: item.left * 2 + 'rpx',
-        top: item.top * 2 + 'rpx',
-      }"
-    >
+  <view v-if="show" :style="{
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: bgcolor,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    zIndex: 9998,
+  }">
+    <view v-for="(item, rect_idx) in skeletonRectLists" :key="'rect_' + rect_idx"
+      :class="[loading == 'chiaroscuro' ? 'chiaroscuro' : '']" :style="{
+    width: item.width * 2 + 'rpx',
+    height: item.height * 2 + 'rpx',
+    backgroundColor: 'rgb(194, 207, 214,.3)',
+    position: 'absolute',
+    left: item.left * 2 + 'rpx',
+    top: item.top * 2 + 'rpx',
+  }">
     </view>
-    <view
-      v-for="(item, circle_idx) in skeletonCircleLists"
-      :key="circle_idx + 'circle'"
-      :class="loading == 'chiaroscuro' ? 'chiaroscuro' : ''"
-      :style="{
-        width: item.width * 2 + 'rpx',
-        height: item.height * 2 + 'rpx',
-        backgroundColor: 'rgb(194, 207, 214,.3)',
-        borderRadius: item.width * 2 + 'rpx',
-        position: 'absolute',
-        left: item.left * 2 + 'rpx',
-        top: item.top * 2 + 'rpx',
-        zIndex: 9998,
-      }"
-    >
+    <view v-for="(item, circle_idx) in skeletonCircleLists" :key="'circle_' + circle_idx"
+      :class="loading == 'chiaroscuro' ? 'chiaroscuro' : ''" :style="{
+    width: item.width * 2 + 'rpx',
+    height: item.height * 2 + 'rpx',
+    backgroundColor: 'rgb(194, 207, 214,.3)',
+    borderRadius: item.width * 2 + 'rpx',
+    position: 'absolute',
+    left: item.left * 2 + 'rpx',
+    top: item.top * 2 + 'rpx',
+    zIndex: 9998,
+  }">
     </view>
     <view class="spinbox" v-if="loading == 'spin'">
       <view class="spin"></view>
@@ -283,7 +272,7 @@ export default {
   methods: {
     attachedAction: function () {
       //默认的首屏宽高，防止内容闪现
-      const systemInfo = uni.getSystemInfoSync();
+      const systemInfo = uni.getSystemSetting();
       this.systemInfo = {
         width: systemInfo.windowWidth,
         height: systemInfo.windowHeight,
@@ -300,6 +289,7 @@ export default {
 .box {
   z-index: 1000;
 }
+
 .spinbox {
   position: fixed;
   display: flex;
@@ -381,11 +371,9 @@ export default {
   top: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.85) 50%,
+      rgba(255, 255, 255, 0) 100%);
 }
 </style>
