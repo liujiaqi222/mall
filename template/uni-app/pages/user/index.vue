@@ -18,14 +18,6 @@
             <view class="bg"></view>
             <view class="user-info">
               <view>
-                <!-- 注释这个是加的bnt -->
-                <!-- #ifdef H5 -->
-                <!-- <button class="bntImg" v-if="userInfo.is_complete == 0 && isWeixin"
-									@click="getWechatuserinfo">
-									<image class="avatar" src='/static/images/f.png'></image>
-									<view class="avatarName">{{$t('获取头像')}}</view>
-								</button> -->
-                <!-- #endif -->
                 <!-- #ifndef APP-PLUS -->
                 <view class="avatar-box" :class="{ on: userInfo.is_money_level }">
                   <image class="avatar" :src='userInfo.avatar' v-if="userInfo.avatar" @click="goEdit()">
@@ -72,15 +64,6 @@
                 <view class="num" v-if="userInfo.phone" @click="goEdit()">
                   <view class="num-txt">{{ userInfo.phone }}</view>
                 </view>
-                <!-- #ifdef MP -->
-                <button class="phone" v-if="!userInfo.phone && isLogin" open-type="getPhoneNumber"
-                  @getphonenumber="getphonenumber">{{ $t(`绑定手机号`) }}</button>
-                <!-- #endif -->
-                <!-- #ifndef MP -->
-                <view class="phone" v-if="!userInfo.phone && isLogin" @tap="bindPhone">
-                  {{ $t('绑定手机号') }}
-                </view>
-                <!-- #endif -->
               </view>
               <view class="message">
                 <navigator v-if="isLogin" url="/pages/users/user_info/index" hover-class="none">
@@ -161,23 +144,7 @@
               </view>
             </view>
           </view>
-          <view class="card-vip" v-if="userInfo.svip_open && member_style == 2">
-            <view class="left-box">
-              <view class="big">{{ $t('会员可享多项权益') }}</view>
-              <view v-if="userInfo.vip_status == 1" class="small">{{ $t('永久') }}</view>
-              <view v-else-if="userInfo.vip_status == 3" class="small">{{ $t('会员到期') }}
-                {{ userInfo.overdue_time | dateFormat }}
-              </view>
-              <view v-else-if="userInfo.vip_status == -1" class="small">{{ $t('已过期') }}</view>
-              <view v-else-if="userInfo.vip_status == 2" class="small">{{ $t('未开通会员') }}
-              </view>
-            </view>
-            <navigator v-if="userInfo.vip_status == 1" url="/pages/annex/vip_paid/index" hover-class="none" class="btn">
-              {{ $t('查看会员权益') }}</navigator>
-            <navigator v-else url="/pages/annex/vip_paid/index" hover-class="none" class="btn">
-              {{ userInfo.overdue_time ? $t('立即续费') : $t('立即激活') }}
-            </navigator>
-          </view>
+      
           <view class="order-wrapper" :class="userInfo.svip_open ? '' : 'height'">
             <view class="order-hd flex">
               <view class="left">{{ $t('订单中心') }}</view>
@@ -400,15 +367,15 @@ export default {
     // #ifdef MP
     // 小程序静默授权
     if (!this.$store.getters.isLogin) {
-      // Routine.getCode()
-      // 	.then(code => {
-      // 		Routine.silenceAuth(code).then(res => {
-      // 			this.onLoadFun();
-      // 		})
-      // 	})
-      // 	.catch(res => {
-      // 		uni.hideLoading();
-      // 	});
+      Routine.getCode()
+      	.then(code => {
+      		Routine.silenceAuth(code).then(res => {
+      			this.onLoadFun();
+      		})
+      	})
+      	.catch(res => {
+      		uni.hideLoading();
+      	});
     }
     // #endif
 

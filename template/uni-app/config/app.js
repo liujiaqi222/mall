@@ -2,7 +2,7 @@ module.exports = {
   // 小程序 / APP请求配置
   // #ifdef MP || APP-PLUS
   // 请求域名 格式： https://您的域名
-  HTTP_REQUEST_URL: `http://81.71.160.143`,
+  HTTP_REQUEST_URL: `http://localhost:8000`,
   // #endif
 
   // H5请求配置

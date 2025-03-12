@@ -6,7 +6,7 @@
     <!-- #ifdef H5 -->
     <view class="followMe" v-if="$wechat.isWeixin()">
       <view class="follow acea-row row-between-wrapper" v-if="followHid && followUrl && !subscribe">
-        <view>{{ $t(`点击“立即关注”即可关注公众号`) }}</view>
+        <view>{{ $t(`点击“立即关注”即可关注公众号`) }}</view>3333
         <view class="acea-row row-middle">
           <view class="bnt" @click="followTap">{{ $t(`立即关注`) }}</view>
           <span class="iconfont icon-guanbi" @click="closeFollow"></span>

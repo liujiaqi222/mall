@@ -1,50 +1,51 @@
 <template>
-	<view class="goodsList">
-		<view class="item" v-for="(item, index) in tempArr" :key="index" @click="goDetail(item)">
-			<view class="pictrue">
-				<span class="pictrue_log pictrue_log_class" v-if="item.activity && item.activity.type === '1' && $permission('seckill')">{{ $t(`秒杀`) }}</span>
-				<span class="pictrue_log pictrue_log_class" v-if="item.activity && item.activity.type === '2' && $permission('bargain')">{{ $t(`砍价`) }}</span>
-				<span class="pictrue_log pictrue_log_class" v-if="item.activity && item.activity.type === '3'  && $permission('combination')">{{ $t(`拼团`) }}</span>
-				<image :src="item.recommend_image" mode="" v-if="item.recommend_image"></image>
-				<image :src="item.image" mode="" v-else></image>
-			</view>
-			<view class="text line2">{{ item.store_name }}</view>
-			<view class="bottom acea-row row-between-wrapper">
-				<view class="sales acea-row row-middle">
-					<view class="money font-color">
-						<text>{{ $t(`￥`) }}</text>
-						{{ item.price }}
-					</view>
-					<view>{{ $t(`已售`) }}{{ item.sales }}</view>
-				</view>
-				<view v-if="item.stock > 0">
-					<view
-						class="bnt"
-						v-if="(item.activity && (item.activity.type === '1' || item.activity.type === '2' || item.activity.type === '3')) || item.is_virtual || !item.cart_button"
-					>
-						{{ $t(`立即购买`) }}
-					</view>
-					<view v-else>
-						<view class="bnt" v-if="!item.spec_type && !item.cart_num" @click.stop="goCartDan(item, index)">
-							{{ $t(`加入购物车`) }}
-						</view>
-						<view class="cart acea-row row-middle" v-else-if="!item.spec_type && item.cart_num">
-							<view class="iconfont icon-jianhao" @click.stop="CartNumDes(index, item)"></view>
-							<view class="num">{{ item.cart_num }}</view>
-							<view class="iconfont icon-jiahao" @click.stop="CartNumAdd(index, item)"></view>
-						</view>
-						<!-- 多规格 -->
-						<view class="bnt" @click.stop="goCartDuo(item)" v-else-if="item.spec_type">
-							{{ $t(`加入购物车`) }}
-							<view class="num" v-if="isLogin && item.cart_num">{{ item.cart_num }}</view>
-						</view>
-						<!-- 单规格 -->
-					</view>
-				</view>
-				<view class="bnt end" v-else>{{ $t(`已售罄`) }}</view>
-			</view>
-		</view>
-	</view>
+  <view class="goodsList">
+    <view class="item" v-for="(item, index) in tempArr" :key="index" @click="goDetail(item)">
+      <view class="pictrue">
+        <span class="pictrue_log pictrue_log_class"
+          v-if="item.activity && item.activity.type === '1' && $permission('seckill')">{{ $t(`秒杀`) }}</span>
+        <span class="pictrue_log pictrue_log_class"
+          v-if="item.activity && item.activity.type === '2' && $permission('bargain')">{{ $t(`砍价`) }}</span>
+        <span class="pictrue_log pictrue_log_class"
+          v-if="item.activity && item.activity.type === '3'  && $permission('combination')">{{ $t(`拼团`) }}</span>
+        <image :src="item.recommend_image" mode="aspectFit" v-if="item.recommend_image"></image>
+        <image :src="item.image" mode="aspectFit" v-else></image>
+      </view>
+      <view class="text line2">{{ item.store_name }}</view>
+      <view class="bottom acea-row row-between-wrapper">
+        <view class="sales acea-row row-middle">
+          <view class="money font-color">
+            <text>{{ $t(`￥`) }}</text>
+            {{ item.price }}
+          </view>
+          <view>{{ $t(`已售`) }}{{ item.sales }}</view>
+        </view>
+        <view v-if="item.stock > 0">
+          <view class="bnt"
+            v-if="(item.activity && (item.activity.type === '1' || item.activity.type === '2' || item.activity.type === '3')) || item.is_virtual || !item.cart_button">
+            {{ $t(`立即购买`) }}
+          </view>
+          <view v-else>
+            <view class="bnt" v-if="!item.spec_type && !item.cart_num" @click.stop="goCartDan(item, index)">
+              {{ $t(`加入购物车`) }}
+            </view>
+            <view class="cart acea-row row-middle" v-else-if="!item.spec_type && item.cart_num">
+              <view class="iconfont icon-jianhao" @click.stop="CartNumDes(index, item)"></view>
+              <view class="num">{{ item.cart_num }}</view>
+              <view class="iconfont icon-jiahao" @click.stop="CartNumAdd(index, item)"></view>
+            </view>
+            <!-- 多规格 -->
+            <view class="bnt" @click.stop="goCartDuo(item)" v-else-if="item.spec_type">
+              {{ $t(`加入购物车`) }}
+              <view class="num" v-if="isLogin && item.cart_num">{{ item.cart_num }}</view>
+            </view>
+            <!-- 单规格 -->
+          </view>
+        </view>
+        <view class="bnt end" v-else>{{ $t(`已售罄`) }}</view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
