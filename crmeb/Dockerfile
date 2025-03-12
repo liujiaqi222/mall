@@ -7,7 +7,8 @@ RUN apt-get update; \
         php7.4-bcmath \ 
         php7.4-redis \
         php7.4-mysqli \
-        php7.4-gd
+        php7.4-gd \
+        nginx
 RUN apt-get clean 
 RUN apt-get autoremove   
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
@@ -22,10 +23,12 @@ WORKDIR /app
 COPY . /app
 
 # 替换nginx、fpm、php配置
-RUN cp /app/conf/nginx.conf /etc/nginx/conf.d/default.conf \
+RUN mkdir -p /etc/nginx/conf.d \
+    && mkdir -p /run/nginx \
+    && cp /app/conf/nginx.conf /etc/nginx/conf.d/default.conf \
     && cp /app/conf/fpm.conf /etc/php/7.4/fpm/pool.d/www.conf \
     && cp /app/conf/php.ini /etc/php/7.4/fpm/php.ini \
-    && mkdir -p /run/nginx \
+    && mkdir -p /app/runtime \
     && chmod -R 777 /app/runtime
 
 # 暴露端口
