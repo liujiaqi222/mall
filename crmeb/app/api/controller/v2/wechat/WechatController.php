@@ -13,6 +13,7 @@ namespace app\api\controller\v2\wechat;
 use app\Request;
 use app\services\wechat\WechatServices;
 use crmeb\services\CacheService;
+use crmeb\services\AccessToken;
 
 /**
  * Class WechatController
@@ -77,5 +78,44 @@ class WechatController
         CacheService::delete('code_' . $phone);
         $data = $this->services->authBindingPhone($key, $phone);
         return app('json')->success($data);
+    }
+
+    /**
+     * 获取小程序scheme码
+     * @param Request $request
+     * @return mixed
+     */
+    public function generateScheme(Request $request)
+    {
+        $data = $request->postMore([
+            ['path', ''],           // 通过scheme码进入的小程序页面路径
+            ['query', ''],          // 通过scheme码进入小程序时的query
+            ['expire_time', 0],     // 到期失效的scheme码的失效时间，为0则永久有效
+            ['is_expire', false],   // 到期失效的scheme码失效类型，false为失效时间不变，true为随机失效时间
+        ]);
+
+        try {
+            /** @var AccessToken $service */
+            $service = app()->make(AccessToken::class);
+            
+            $params = [
+                'jump_wxa' => [
+                    'path' => $data['path'],
+                    'query' => $data['query']
+                ],
+                'expire_time' => intval($data['expire_time']),
+                'is_expire' => $data['is_expire']
+            ];
+
+            $result = $service->generateScheme($params);
+            
+            if (isset($result['errcode']) && $result['errcode'] != 0) {
+                return app('json')->fail($result['errmsg'] ?? '生成scheme码失败');
+            }
+
+            return app('json')->success(['scheme' => $result['openlink'] ?? '']);
+        } catch (\Exception $e) {
+            return app('json')->fail($e->getMessage());
+        }
     }
 }

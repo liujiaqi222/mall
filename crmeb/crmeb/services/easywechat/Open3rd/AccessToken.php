@@ -89,6 +89,11 @@ class AccessToken extends HttpService
     const AUTHORIZER_TOKEN = 'https://api.weixin.qq.com/cgi-bin/component/api_authorizer_token';
 
     /**
+     * 获取小程序 scheme 码
+     */
+    const GENERATE_SCHEME = 'https://api.weixin.qq.com/wxa/generatescheme';
+
+    /**
      * AccessTokenServeService constructor.
      * @param string $component_appid
      * @param string $component_appsecret

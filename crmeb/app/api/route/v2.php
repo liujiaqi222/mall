@@ -28,6 +28,8 @@ Route::group('v2', function () {
             Route::post('routine/phone_login', 'v2.wechat.AuthController/phoneLogin')->option(['real_name' => '手机号直接登录']);
             //小程序授权后绑定手机号
             Route::post('routine/binding_phone', 'v2.wechat.AuthController/BindingPhone')->option(['real_name' => '小程序授权后绑定手机号']);
+            //获取小程序scheme码
+            Route::post('routine/generate_scheme', 'v2.wechat.WechatController/generateScheme')->option(['real_name' => '获取小程序scheme码']);
 
             //公众号授权登录，返回token
             Route::get('wechat/auth_login', 'v2.wechat.WechatController/authLogin')->option(['real_name' => '公众号授权登录']);
