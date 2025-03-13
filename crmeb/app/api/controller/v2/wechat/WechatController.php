@@ -13,7 +13,7 @@ namespace app\api\controller\v2\wechat;
 use app\Request;
 use app\services\wechat\WechatServices;
 use crmeb\services\CacheService;
-use crmeb\services\easywechat\open3rd\AccessToken;
+use crmeb\services\easywechat\Open3rd\AccessToken;
 
 /**
  * Class WechatController
