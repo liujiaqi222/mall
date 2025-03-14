@@ -2,24 +2,11 @@
   <div>
     <el-card :bordered="false" shadow="never" class="ivu-mb-16" :body-style="{ padding: 0 }">
       <div class="padding-add">
-        <el-form
-          ref="artFrom"
-          :model="artFrom"
-          :label-width="labelWidth"
-          label-position="right"
-          @submit.native.prevent
-          inline
-        >
+        <el-form ref="artFrom" :model="artFrom" :label-width="labelWidth" label-position="right" @submit.native.prevent
+          inline>
           <el-form-item label="文章分类：" label-for="pid">
-            <el-cascader
-              v-model="artFrom.pid"
-              placeholder="请选择"
-              class="treeSel"
-              @change="handleCheckChange"
-              :options="treeData"
-              :props="props"
-              style="width: 250px"
-            >
+            <el-cascader v-model="artFrom.pid" placeholder="请选择" class="treeSel" @change="handleCheckChange"
+              :options="treeData" :props="props" style="width: 250px">
             </el-cascader>
           </el-form-item>
           <el-form-item label="文章搜索：" label-for="title">
@@ -32,18 +19,10 @@
       </div>
     </el-card>
     <el-card :bordered="false" shadow="never" class="ivu-mt">
-      <router-link :to="$routeProStr + '/cms/article/add_article'" v-auth="['cms-article-creat']"
-        ><el-button type="primary" class="bnt">添加文章</el-button></router-link
-      >
-      <el-table
-        :data="cmsList"
-        ref="table"
-        class="mt14"
-        v-loading="loading"
-        highlight-current-row
-        no-userFrom-text="暂无数据"
-        no-filtered-userFrom-text="暂无筛选结果"
-      >
+      <router-link :to="$routeProStr + '/cms/article/add_article'" v-auth="['cms-article-creat']"><el-button
+          type="primary" class="bnt">添加文章</el-button></router-link>
+      <el-table :data="cmsList" ref="table" class="mt14" v-loading="loading" highlight-current-row
+        no-userFrom-text="暂无数据" no-filtered-userFrom-text="暂无筛选结果">
         <el-table-column label="ID" width="80">
           <template slot-scope="scope">
             <span>{{ scope.row.id }}</span>
@@ -87,7 +66,7 @@
             <el-divider direction="vertical"></el-divider>
             <a v-db-click @click="artRelation(scope.row, '取消关联', index)">{{
               scope.row.product_id === 0 ? '关联' : '取消关联'
-            }}</a>
+              }}</a>
             <el-divider direction="vertical"></el-divider>
             <a v-db-click @click="del(scope.row, '删除文章', scope.$index)">删除</a>
             <el-divider direction="vertical"></el-divider>
@@ -96,19 +75,15 @@
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">移动端链接</el-dropdown-item>
                 <el-dropdown-item command="2">PC端链接</el-dropdown-item>
+                <el-dropdown-item command="3">小程序跳转链接</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </template>
         </el-table-column>
       </el-table>
       <div class="acea-row row-right page">
-        <pagination
-          v-if="total"
-          :total="total"
-          :page.sync="artFrom.page"
-          :limit.sync="artFrom.limit"
-          @pagination="getList"
-        />
+        <pagination v-if="total" :total="total" :page.sync="artFrom.page" :limit.sync="artFrom.limit"
+          @pagination="getList" />
       </div>
     </el-card>
     <!--关联-->
@@ -176,7 +151,7 @@ export default {
       }
     },
   },
-  created() {},
+  created() { },
   activated() {
     this.artFrom.pid = this.$route.query.id ? this.$route.query.id : 0;
     this.getList();
@@ -295,7 +270,17 @@ export default {
       this.getList();
     },
     onCopy(row, type) {
-      let copy_url = type == 1 ? row.copy_url : row.copy_url_pc;
+      
+      let copy_url
+      if (type === 1) {
+        copy_url = row.copy_url
+      }
+      else if (type === 2) {
+        copy_url = row.copy_url_pc;
+      }
+      else {
+        copy_url = `${window.location.origin}/landing-page/?id=${row.id}`;
+      }
       this.$copyText(copy_url)
         .then((message) => {
           this.$message.success('复制成功');

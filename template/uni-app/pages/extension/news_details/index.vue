@@ -1,12 +1,6 @@
 <template>
 	<view :style="colorStyle">
 		<view class='newsDetail'>
-			<view class='title'>{{articleInfo.title || ''}}</view>
-			<view class='list acea-row row-middle'>
-				<view class='label'>{{articleInfo.catename || ''}}</view>
-				<view class='item'></text>{{articleInfo.add_time || ''}}</view>
-				<view class='item'><text class='iconfont icon-liulan'></text>{{articleInfo.visit || ''}}</view>
-			</view>
 			<view class='conters'>
 				<jyf-parser :html="content" ref="article" :tag-style="tagStyle"></jyf-parser>
 			</view>
@@ -29,7 +23,6 @@
 				v-if="this.$wechat.isWeixin()">{{$t(`和好友一起分享`)}}</button>
 			<!-- #endif -->
 			<!-- #ifdef MP -->
-			<button class="bnt bg-color" open-type="share" hover-class='none'>{{$t(`和好友一起分享`)}}</button>
 			<!-- #endif -->
 		</view>
 		<shareInfo @setShareInfoStatus="setShareInfoStatus" :shareInfoStatus="shareInfoStatus"></shareInfo>
@@ -176,11 +169,7 @@
 	.newsDetail .list .label {
 		font-size: 24rpx;
 		color: #B1B2B3;
-		// height: 38rpx;
-		// border-radius: 3rpx;
-		// text-align: center;
-		// line-height: 38rpx;
-		// padding: 0 10rpx;
+	
 	}
 
 	.newsDetail .list .item {

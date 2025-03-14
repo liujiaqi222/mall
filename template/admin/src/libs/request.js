@@ -13,6 +13,7 @@ import { Message } from 'element-ui';
 import { getCookies, removeCookies } from '@/libs/util';
 import Setting from '@/setting';
 import router from '@/router';
+console.log(Setting.apiBaseURL);
 const service = axios.create({
   baseURL: Setting.apiBaseURL,
   timeout: 10000, // 请求超时时间

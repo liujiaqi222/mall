@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
 
 const route = useRoute()
-const responseData = ref<any>(null)
 const error = ref<string | null>(null)
 const isLoading = ref(true)
 
-onMounted(() => {
-  jumpToWeChatMiniProgram()
-})
+// onMounted(() => {
+//   jumpToWeChatMiniProgram()
+// })
 
 // 跳转到微信小程序的函数
 const jumpToWeChatMiniProgram = () => {
+  // 从route.query中获取id参数
+  const id = route.query.id
+  console.log('从route获取到的ID:', id)
   try {
-    window.location.href = 'weixin://dl/business/?appid=wx6e9bee57a65e5276&path=pages/extension/news_details/index&query=id=2&env_version=release'
+    window.location.href = `weixin://dl/business/?appid=wx6e9bee57a65e5276&path=pages/extension/news_details/index&query=id=${id}&env_version=release`
   } catch (err: any) {
     console.error('Error jumping to WeChat Mini Program:', err)
     error.value = '跳转到微信小程序失败，请确保已安装微信'
