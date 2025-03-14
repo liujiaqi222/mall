@@ -1,0 +1,3 @@
+<?php
+define('INSTALL_DATE',1741920418);
+define('SERIALNUMBER','MP3K9n');
