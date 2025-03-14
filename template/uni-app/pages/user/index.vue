@@ -284,7 +284,6 @@
 	} from '@/api/user.js';
 	import {
 		wechatAuthV2,
-		silenceAuth
 	} from '@/api/public.js'
 	import {
 		toLogin
@@ -397,21 +396,6 @@
 		onLoad(option) {
 			uni.hideTabBar()
 			let that = this;
-			// #ifdef MP
-			// 小程序静默授权
-			if (!this.$store.getters.isLogin) {
-				// Routine.getCode()
-				// 	.then(code => {
-				// 		Routine.silenceAuth(code).then(res => {
-				// 			this.onLoadFun();
-				// 		})
-				// 	})
-				// 	.catch(res => {
-				// 		uni.hideLoading();
-				// 	});
-			}
-			// #endif
-
 			// #ifdef H5 || APP-PLUS
 			if (that.isLogin == false) {
 				toLogin()

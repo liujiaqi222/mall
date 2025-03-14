@@ -83,7 +83,8 @@ function _toLogin(push, pathLogin) {
 
 	// #ifdef MP
 	let url
-	if (!BASIC_CONFIG.wechat_auth_switch) {
+  if (!BASIC_CONFIG.wechat_auth_switch) {
+    console.log('hello hello login...')
 		url = '/pages/users/binding_phone/index?pageType=0'
 	} else {
 		url = '/pages/users/wechat_login/index'

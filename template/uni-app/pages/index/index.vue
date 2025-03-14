@@ -9,6 +9,10 @@ import visualization from './visualization';
 import Cache from '@/utils/cache';
 import { getShare, getVersion } from '@/api/public.js';
 import { spreadAgent } from '@/api/user.js';
+import Routine from '@/libs/routine';
+import {
+  getUserInfo
+} from '@/api/user.js';
 export default {
 	data() {
 		return {
@@ -21,9 +25,11 @@ export default {
 		diy,
 		visualization
 	},
-	onLoad(options) {
+	 onLoad(options) {
 		uni.hideTabBar();
-		//扫码携带参数处理
+     //扫码携带参数处理
+     console.log('fuckk...')
+     this.silentMpUserLogin();
 		// #ifdef MP
 		const queryData = uni.getEnterOptionsSync(); // uni-app版本 3.5.1+ 支持
 		if (queryData.query.scene){
@@ -33,9 +39,12 @@ export default {
 		// #ifndef MP
 		if (options.agent_id) {
 			this.$Cache.set('agent_id', options.agent_id);
-		}
+    }
+  
 		// #endif
-		this.setOpenShare();
+    this.setOpenShare();
+   
+   
 	},
 	onShow() {
 		this.getVersion(0);
@@ -51,7 +60,7 @@ export default {
 		bindAgent(agent_id) {
 			spreadAgent({
 				// #ifdef MP
-				agent_code: this.$Cache.get('agent_id')
+				agent_code: this.$Cache.get('agent_id'),
 				// #endif
 				// #ifndef MP
 				agent_id: this.$Cache.get('agent_id')
@@ -98,7 +107,21 @@ export default {
 					});
 					// #endif
 				});
-		},
+    },
+
+   async  silentMpUserLogin() {
+     const res = await Routine.mpUserLogin(getApp())
+     console.log(res,'hello')
+     const time = res.data.expires_time - this.$Cache.time();
+     this.$store.commit('LOGIN', {
+       token: res.data.token,
+       time: time
+     });
+     const userRes = await getUserInfo()
+     this.$store.commit('SETUID', userRes.data.uid);
+     this.$store.commit('UPDATE_USERINFO', userRes.data);
+
+    },
 		// 微信分享；
 		setOpenShare: function () {
 			let that = this;

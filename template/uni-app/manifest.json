@@ -1,10 +1,11 @@
 {
     "name" : "CRMEB标准版",
-    "appid" : "__UNI__A3F1ED4",
+    "appid" : "__UNI__D7F0000",
     "description" : "CRMEB标准版",
     "versionName" : "5.4.0",
     "versionCode" : 540,
     "transformPx" : false,
+    "sassImplementationName" : "node-sass",
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,
@@ -99,13 +100,13 @@
                     "weixin" : {
                         "__platform__" : [ "ios", "android" ],
                         "appid" : "wx277a269f3d736d67",
-                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__A3F1ED4/"
+                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__D7F0000/"
                     }
                 },
                 "share" : {
                     "weixin" : {
                         "appid" : "wx277a269f3d736d67",
-                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__A3F1ED4/"
+                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__D7F0000/"
                     }
                 },
                 "push" : {},
@@ -120,7 +121,7 @@
                     "weixin" : {
                         "appid" : "wx277a269f3d736d67",
                         "appsecret" : "bd08741a055c2ecac5826ff1c048464b",
-                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__A3F1ED4/"
+                        "UniversalLinks" : "https://bzapp.crmeb.net/uni-universallinks/__UNI__D7F0000/"
                     }
                 },
                 "ad" : {},
@@ -181,7 +182,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx3b82801238ca1b57",
+        "appid" : "wx6e9bee57a65e5276",
         "setting" : {
             "urlCheck" : false,
             "minified" : true,

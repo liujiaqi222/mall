@@ -122,18 +122,17 @@ class Local extends BaseUpload
             if (filesize($fileHandle) > $this->validate['filesize']) {
                 return $this->setError('文件过大');
             }
-            if (!in_array($fileHandle->getOriginalMime(), $this->validate['fileMime'])) {
-                return $this->setError('不合法的文件类型');
-            }
-            $stream = fopen($fileHandle->getPathname(), 'r');
-            $content = (fread($stream, filesize($fileHandle->getPathname())));
-            if (is_resource($stream)) {
-                fclose($stream);
-            }
-            $image = @imagecreatefromstring($content);
-            if ($image === false) {
-                return $this->setError('文件内容不合法');
-            }
+            if (in_array($fileHandle->getOriginalMime(), ['image/x-icon', 'image/png', 'image/gif', 'image/jpeg', 'image/jpg'])) {
+              $stream = fopen($fileHandle->getPathname(), 'r');
+              $content = (fread($stream, filesize($fileHandle->getPathname())));
+              if (is_resource($stream)) {
+               fclose($stream);
+               }
+               $image = @imagecreatefromstring($content);
+              if ($image === false) {
+              return $this->setError('文件内容不合法');
+               }
+}
         }
         if ($realName) {
             $fileName = Filesystem::putFileAs($this->path, $fileHandle, $fileHandle->getOriginalName());

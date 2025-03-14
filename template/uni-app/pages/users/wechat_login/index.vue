@@ -146,7 +146,6 @@
 				this.canGetPrivacySetting = true
 			}
 			// #endif
-			let that = this;
 			// #ifdef MP
 			this.userLogin()
 			// #endif
@@ -206,14 +205,6 @@
 			},
 			// 小程序 22.11.8日删除getUserProfile 接口获取用户昵称头像
 			userLogin() {
-				// if (!this.protocol) {
-				// 	uni.showToast({
-				// 		title: this.$t('请先阅读并同意协议'),
-				// 		icon: 'none',
-				// 		duration: 2000
-				// 	});
-				// 	return
-				// }
 				Routine.getCode()
 					.then(code => {
 						// uni.showLoading({
