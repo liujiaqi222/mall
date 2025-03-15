@@ -5,7 +5,7 @@
       <!--#ifdef MP-WEIXIN || MP-QQ || MP-ALIPAY || APP-PLUS-->
       <template v-if="n.name == 'img'">
         <image v-if="allowScan" :id="n.attrs.id" class="_img" :style="n.attrs.style" :src="n.attrs.src"
-          :data-attrs="n.attrs" @tap="imgtap" mode="widthFix" :show-menu-by-longpress="true" />
+          :data-attrs="n.attrs"  mode="widthFix" :show-menu-by-longpress="true" />
         <rich-text v-else :id="n.attrs.id" class="_img" :style="'' + handler.getStyle(n.attrs.style)"
           :nodes="handler.getNode(n, !lazyLoad || imgLoad)" :data-attrs="n.attrs" @tap="imgtap"
           @longpress="imglongtap" />
