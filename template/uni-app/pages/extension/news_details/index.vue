@@ -1,35 +1,35 @@
 <template>
-	<view :style="colorStyle">
-		<view class='newsDetail'>
-			<view class='conters'>
-				<jyf-parser :html="content" ref="article" :tag-style="tagStyle"></jyf-parser>
-			</view>
-			<navigator class="picTxt acea-row row-between-wrapper" v-if="store_info.id"
-				:url="'/pages/goods_details/index?id='+store_info.id" hover-class="none">
-				<view class="pictrue">
-					<image :src="store_info.image"></image>
-				</view>
-				<view class="text">
-					<view class="name line1">{{store_info.store_name || ''}}</view>
-					<view class="money font-color">
-						{{$t(`￥`)}}<text class="num">{{store_info.price || 0}}</text>
-					</view>
-					<view class="y_money">{{$t(`￥`)}}{{store_info.ot_price || 0}}</view>
-				</view>
-				<navigator class="label"><text class="span">{{$t(`查看商品`)}}</text></navigator>
-			</navigator>
-			<!-- #ifdef H5 -->
-			<button class="bnt bg-color" hover-class='none' @click="listenerActionSheet"
-				v-if="this.$wechat.isWeixin()">{{$t(`和好友一起分享`)}}</button>
-			<!-- #endif -->
-			<!-- #ifdef MP -->
-			<!-- #endif -->
-		</view>
-		<shareInfo @setShareInfoStatus="setShareInfoStatus" :shareInfoStatus="shareInfoStatus"></shareInfo>
-		<!-- #ifndef MP -->
-		<home></home>
-		<!-- #endif -->
-	</view>
+  <view :style="colorStyle">
+    <view class='newsDetail'>
+      <view class='conters'>
+        <jyf-parser :html="content" ref="article" :tag-style="tagStyle" :allowScan="true"></jyf-parser>
+      </view>
+      <navigator class="picTxt acea-row row-between-wrapper" v-if="store_info.id"
+        :url="'/pages/goods_details/index?id='+store_info.id" hover-class="none">
+        <view class="pictrue">
+          <image :src="store_info.image"></image>
+        </view>
+        <view class="text">
+          <view class="name line1">{{store_info.store_name || ''}}</view>
+          <view class="money font-color">
+            {{$t(`￥`)}}<text class="num">{{store_info.price || 0}}</text>
+          </view>
+          <view class="y_money">{{$t(`￥`)}}{{store_info.ot_price || 0}}</view>
+        </view>
+        <navigator class="label"><text class="span">{{$t(`查看商品`)}}</text></navigator>
+      </navigator>
+      <!-- #ifdef H5 -->
+      <button class="bnt bg-color" hover-class='none' @click="listenerActionSheet"
+        v-if="this.$wechat.isWeixin()">{{$t(`和好友一起分享`)}}</button>
+      <!-- #endif -->
+      <!-- #ifdef MP -->
+      <!-- #endif -->
+    </view>
+    <shareInfo @setShareInfoStatus="setShareInfoStatus" :shareInfoStatus="shareInfoStatus"></shareInfo>
+    <!-- #ifndef MP -->
+    <home></home>
+    <!-- #endif -->
+  </view>
 </template>
 
 <script>

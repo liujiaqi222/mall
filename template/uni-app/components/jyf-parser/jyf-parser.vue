@@ -1,22 +1,22 @@
 <template>
-	<view>
-		<slot v-if="!nodes.length" />
-		<!--#ifdef APP-PLUS-NVUE-->
-		<web-view id="top" ref="web" :src="src" :style="'margin-top:-2px;height:'+height+'px'" @onPostMessage="_message" />
-		<!--#endif-->
-		<!--#ifndef APP-PLUS-NVUE-->
-		<view id="top" :style="showAm+(selectable?';user-select:text;-webkit-user-select:text':'')" :animation="scaleAm" @tap="_tap"
-		 @touchstart="_touchstart" @touchmove="_touchmove">
-			<!--#ifdef H5-->
-			<div :id="'rtf'+uid"></div>
-			<!--#endif-->
-			<!--#ifndef H5-->
-			<trees :nodes="nodes" :lazy-load="lazyLoad" :loadVideo="loadVideo" />
-			<image v-for="(item, index) in imgs" v-bind:key="index" :id="index" :src="item" hidden @load="_load" />
-			<!--#endif-->
-		</view>
-		<!--#endif-->
-	</view>
+  <view>
+    <slot v-if="!nodes.length" />
+    <!--#ifdef APP-PLUS-NVUE-->
+    <web-view id="top" ref="web" :src="src" :style="'margin-top:-2px;height:'+height+'px'" @onPostMessage="_message" />
+    <!--#endif-->
+    <!--#ifndef APP-PLUS-NVUE-->
+    <view id="top" :style="showAm+(selectable?';user-select:text;-webkit-user-select:text':'')" :animation="scaleAm"
+      @tap="_tap" @touchstart="_touchstart" @touchmove="_touchmove">
+      <!--#ifdef H5-->
+      <div :id="'rtf'+uid"></div>
+      <!--#endif-->
+      <!--#ifndef H5-->
+      <trees :nodes="nodes" :lazy-load="lazyLoad" :loadVideo="loadVideo" :allowScan="allowScan" />
+      <image v-for="(item, index) in imgs" v-bind:key="index" :id="index" :src="item" hidden @load="_load" />
+      <!--#endif-->
+    </view>
+    <!--#endif-->
+  </view>
 </template>
 
 <script>
@@ -70,7 +70,8 @@
 		},
 		// #endif
 		props: {
-			'html': null,
+      'html': null,
+      allowScan: Boolean,
 			// #ifndef MP-ALIPAY
 			'autopause': {
 				type: Boolean,
