@@ -6,9 +6,9 @@ const route = useRoute()
 const error = ref<string | null>(null)
 const isLoading = ref(true)
 
-// onMounted(() => {
-//   jumpToWeChatMiniProgram()
-// })
+onMounted(() => {
+  jumpToWeChatMiniProgram()
+})
 
 // 跳转到微信小程序的函数
 const jumpToWeChatMiniProgram = () => {
