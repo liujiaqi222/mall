@@ -1,13 +1,23 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const error = ref<string | null>(null)
-const isLoading = ref(true)
+
 
 onMounted(() => {
-  jumpToWeChatMiniProgram()
+  // 检查URL中是否有id参数
+  if (route.query.id) {
+    jumpToWeChatMiniProgram()
+  }
+})
+
+// 监听路由参数变化
+watch(() => route.query.id, (newId) => {
+  if (newId) {
+    jumpToWeChatMiniProgram()
+  }
 })
 
 // 跳转到微信小程序的函数
@@ -20,7 +30,6 @@ const jumpToWeChatMiniProgram = () => {
   } catch (err: any) {
     console.error('Error jumping to WeChat Mini Program:', err)
     error.value = '跳转到微信小程序失败，请确保已安装微信'
-    isLoading.value = false
   }
 }
 </script>
